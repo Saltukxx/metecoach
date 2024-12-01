@@ -173,23 +173,23 @@ body {
     }
 
     .nav-links {
-        position: fixed;
-        top: 0;
+        position: absolute;
+        top: 100%;
         right: 0;
+        background: rgba(255, 255, 255, 0.95); /* Match navbar */
         width: 75%;
-        height: 100%;
-        background: rgba(255, 255, 255, 0.95);
+        height: auto;
+        display: none; /* Hidden by default */
         flex-direction: column;
         align-items: center;
-        gap: 2rem;
-        padding: 4rem 2rem;
-        box-shadow: var(--box-shadow);
-        transform: translateX(100%);
-        transition: transform var(--transition-fast);
+        padding: 1rem;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 999;
+        transition: transform 0.3s ease-in-out;
     }
 
     .nav-links.active {
-        transform: translateX(0);
+        display: flex; /* Show on toggle */
     }
 
     .nav-links a {
@@ -202,6 +202,8 @@ body {
         text-align: center;
     }
 }
+
+
 
 
 /* Hero Section Styles */
@@ -468,22 +470,42 @@ body {
     margin-bottom: 1.5rem;
 }
 
-.features-grid {
+features-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-    margin: 3rem 0;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjust grid for responsiveness */
+    gap: 2rem; /* Space between items */
+    justify-content: center;
+    align-items: center; /* Vertically align content */
+    text-align: center; /* Center-align text */
+    margin: 2rem auto; /* Center the grid itself */
+    max-width: 1200px; /* Limit the width of the grid */
 }
 
-.feature {
+.feature-item {
     display: flex;
-    align-items: center;
-    gap: 1rem;
+    flex-direction: column;
+    align-items: center; /* Center icon and text */
+    justify-content: center;
+    text-align: center;
+    gap: 0.5rem; /* Space between icon and text */
 }
 
-.feature i {
-    font-size: 2rem;
+.feature-item i {
+    font-size: 2.5rem; /* Icon size */
     color: var(--primary-color);
+}
+
+.feature-item h3 {
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--text-color);
+    margin: 0; /* Remove default margin */
+}
+
+.feature-item p {
+    font-size: 0.875rem;
+    color: var(--gray-text);
+    margin: 0; /* Remove default margin */
 }
 
 /* Services Section */

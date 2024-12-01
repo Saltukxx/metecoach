@@ -1324,38 +1324,48 @@ features-grid {
     display: flex;
     align-items: center;
     text-decoration: none;
-    gap: 0.5rem;
-    padding: 0.5rem;
+    padding: 10px;
 }
 
 .logo-text {
-    font-size: 1.4rem;
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
     font-weight: 700;
-    color: #1e3a8a;  /* Dark blue */
-    background: rgba(255, 255, 255, 0.9);  /* Semi-transparent white background */
-    padding: 0.5rem 1rem;
-    border-radius: 8px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    transition: all 0.3s ease;
+    color: #8B5CF6;  /* Purple color */
+    letter-spacing: 1px;
+    position: relative;
+    padding-bottom: 2px;
 }
 
-/* When scrolled down */
+/* Underline effect */
+.logo-text::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #8B5CF6;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.logo:hover .logo-text::after {
+    transform: scaleX(1);
+}
+
+/* When navbar is scrolled */
 .scrolled .logo-text {
     color: #ffffff;
-    background: rgba(37, 99, 235, 0.9);  /* Semi-transparent blue */
 }
 
-/* Hover effect */
-.logo:hover .logo-text {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+.scrolled .logo-text::after {
+    background-color: #ffffff;
 }
 
-/* Mobile responsiveness */
+/* Responsive adjustments */
 @media (max-width: 768px) {
     .logo-text {
-        font-size: 1.2rem;
-        padding: 0.4rem 0.8rem;
+        font-size: 20px;
     }
 }

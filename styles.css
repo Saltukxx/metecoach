@@ -211,7 +211,7 @@ body {
 .hero {
     position: relative;
     min-height: 100vh;
-    background-image: url('hero2.jpg');
+    background-image: url('hero.jpg.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed; /* This creates the parallax effect */

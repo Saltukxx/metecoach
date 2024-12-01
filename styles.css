@@ -213,7 +213,7 @@ body {
     min-height: 100vh;
     background-image: url('hero.jpg.jpg');
     background-size: cover;
-    background-position: center;
+    background-position: 20% 30%; /* Focus on the upper part */
     background-attachment: fixed; /* This creates the parallax effect */
     background-repeat: no-repeat;
     overflow: hidden;

@@ -40,36 +40,55 @@
         </div>
     </nav>
 
-    <!-- Modern Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-particles"></div>
-        <div class="hero-content">
-            <h1 class="animate-on-scroll fade-in-up">Profesyonel Yüzme Eğitimi</h1>
-            <p class="animate-on-scroll fade-in-up delay-200">Her yaşa ve seviyeye uygun özel yüzme dersleri</p>
-            <div class="hero-cta animate-on-scroll fade-in-up delay-400">
-                <a href="#contact" class="primary-btn">Ücretsiz Deneme Dersi</a>
-                <a href="#about" class="secondary-btn">Daha Fazla Bilgi</a>
+<!-- Hero Section with Video -->
+<section id="home" class="section hero">
+    <!-- Video Background -->
+    <div class="video-wrapper">
+        <video class="hero-video" autoplay muted loop playsinline poster="hero-poster.jpg">
+            <source src="herovideo.mp4" type="video/mp4">
+        </video>
+        <div class="video-overlay"></div>
+    </div>
+
+    <div class="hero-particles"></div>
+
+    <div class="hero-content">
+        <h1 class="animate-on-scroll fade-in-up" id="profesyonel-yüzme-eğitimi">
+            Profesyonel Yüzme Eğitimi
+        </h1>
+
+        <p class="animate-on-scroll fade-in-up">
+            Her yaşa ve seviyeye uygun özel yüzme dersleri
+        </p>
+
+        <div class="hero-cta animate-on-scroll fade-in-up delay-400">
+            <a href="#contact" class="primary-btn">Yüzmeye Başla</a>
+            <a href="#about" class="secondary-btn">Daha Fazla Bilgi</a>
+        </div>
+
+        <div class="hero-stats">
+            <div class="stat animate-on-scroll fade-in-up delay-600">
+                <span class="counter" data-target="+500">0</span>
+                <span class="stat-label">Öğrenci</span>
             </div>
-            <div class="hero-stats">
-                <div class="stat animate-on-scroll fade-in-up delay-600">
-                    <span class="counter" data-target="500">0</span>
-                    <span class="stat-label">Öğrenci</span>
-                </div>
-                <div class="stat animate-on-scroll fade-in-up delay-700">
-                    <span class="counter" data-target="15">0</span>
-                    <span class="stat-label">Yıllık Deneyim</span>
-                </div>
-                <div class="stat animate-on-scroll fade-in-up delay-800">
-                    <span class="counter" data-target="100">0</span>
-                    <span class="stat-label">Başarı Belgesi</span>
-                </div>
+
+            <div class="stat animate-on-scroll fade-in-up delay-700">
+                <span class="counter" data-target="+25">0</span>
+                <span class="stat-label">Yıllık Deneyim</span>
+            </div>
+
+            <div class="stat animate-on-scroll fade-in-up delay-800">
+                <span class="counter" data-target="+100">0</span>
+                <span class="stat-label">Başarı Belgesi</span>
             </div>
         </div>
-        <div class="scroll-indicator">
-            <div class="mouse"></div>
-            <span>Kaydır</span>
-        </div>
-    </section>
+    </div>
+
+    <div class="scroll-indicator">
+        <div class="mouse"></div>
+        <span>Kaydır</span>
+    </div>
+</section>
 
     <!-- Enhanced About Section -->
     <section id="about" class="section">
@@ -78,7 +97,7 @@
                 <div class="about-image animate-on-scroll fade-in-left">
                     <img src="banner3.jpg" alt="Mete Coach Yüzme Eğitimi">
                     <div class="experience-badge">
-                        <span>15</span>
+                        <span>+25</span>
                         <span>Yıllık Deneyim</span>
                     </div>
                 </div>
@@ -88,19 +107,25 @@
                     <div class="features-grid">
                         <div class="feature">
                             <i class="fas fa-user-graduate"></i>
-                            <h3>Uzman Eğitmenler</h3>
+                            <h5>Uzman Eğitmen |</h5>
+                            <h3>Bahadır Mete Horasan</h3>
                         </div>
                         <div class="feature">
                             <i class="fas fa-swimming-pool"></i>
-                            <h3>Modern Tesisler</h3>
+                            <h5>Modern Tesisler |</h5>
+                            <h3>25m Yarı Olimpik Havuz | 15m Çocuk Çırpınma Havuzu</h3>
                         </div>
                         <div class="feature">
                             <i class="fas fa-shield-alt"></i>
-                            <h3>Güvenli Ortam</h3>
+                            <h5>Güvenli Ortam |</h5>
+                            <h3>Can Kurtaran Belgesi | İlk Yardım Belgesi</h3>
                         </div>
                         <div class="feature">
                             <i class="fas fa-user-clock"></i>
-                            <h3>Kişiye Özel Program</h3>
+                            <h5>Kişiye Özel Program |</h5>
+                            <h3>Performans sporcuları için haftalık, aylık ve yıllık yüzme programları hazırlanır.</h3>
+                            <h3>Kilo vermek isteyen bireyler için özel yüzme programları oluşturulur.</h3>
+                            <h3>Atletik becerilerini geliştirmek isteyenler için kişiye özel programlar hazırlanır.</h3>
                         </div>
                     </div>
                     <a href="#contact" class="about-cta">Hemen Başlayın</a>

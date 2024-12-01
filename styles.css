@@ -1187,3 +1187,50 @@ features-grid {
         transform: none;
     }
 }
+.video-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.85), rgba(59, 130, 246, 0.85));
+}
+
+/* Ensure hero content appears above video */
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* Mobile optimization */
+@media (max-width: 768px) {
+    .hero-video {
+        display: none;
+    }
+    
+    .video-wrapper {
+        background: url('hero-poster.jpg') center/cover no-repeat;
+    }
+}

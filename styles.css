@@ -207,40 +207,41 @@ body {
 
 
 /* Hero Section Styles */
+/* Overlay to ensure text readability */
 .hero {
-    min-height: 100vh;
-    background-image: url('hero.jpg.jpg');
-    background-size: cover;
-    background-position: 25% 40%; /* Focus on the upper part */
-
-    background-repeat: no-repeat;
-    background-attachment: fixed; /* Creates parallax effect */
     position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 8rem 2rem;
+    min-height: 100vh;
+    background-image: url('hero2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* This creates the parallax effect */
+    background-repeat: no-repeat;
     overflow: hidden;
 }
 
-/* Semi-transparent overlay */
+/* Overlay for better text readability */
 .hero::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(rgba(37, 99, 235, 0.6), rgba(59, 130, 246, 0.6));
-    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        135deg,
+        rgba(37, 99, 235, 0.4),
+        rgba(59, 130, 246, 0.4)
+    );
 }
 
 .hero-content {
     position: relative;
     z-index: 2;
     max-width: 1200px;
+    margin: 0 auto;
+    padding: 8rem 2rem;
     text-align: center;
-    color: var(--light-text);
+    color: white;
 }
 
 .hero h1 {
@@ -262,6 +263,12 @@ body {
     gap: 1.5rem;
     justify-content: center;
     margin-bottom: 4rem;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        background-attachment: scroll;
+    }
 }
 
 .primary-btn, .secondary-btn {
@@ -1246,4 +1253,109 @@ features-grid {
         rgba(37, 99, 235, 0.4),  /* Even lighter */
         rgba(59, 130, 246, 0.4)   /* Even lighter */
     );
+}
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.service-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-height: 300px; /* Ensure all cards are same height */
+}
+
+.service-icon {
+    font-size: 2.5rem;
+    color: #4169e1;
+    margin-bottom: 1.5rem;
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    color: #1e293b;
+    margin-bottom: 1rem;
+}
+
+.service-card p {
+    color: #64748b;
+    margin-bottom: 2rem;
+    flex-grow: 1; /* This pushes the button to the bottom */
+}
+
+.detayli-bilgi {
+    background: #4169e1;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    margin-top: auto; /* Aligns buttons at the bottom */
+}
+
+.detayli-bilgi:hover {
+    background: #3154c4;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(65, 105, 225, 0.2);
+}
+
+/* For mobile responsiveness */
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .service-card {
+        min-height: auto;
+        padding: 1.5rem;
+    }
+}
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: 0.5rem;
+    padding: 0.5rem;
+}
+
+.logo-text {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #1e3a8a;  /* Dark blue */
+    background: rgba(255, 255, 255, 0.9);  /* Semi-transparent white background */
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+/* When scrolled down */
+.scrolled .logo-text {
+    color: #ffffff;
+    background: rgba(37, 99, 235, 0.9);  /* Semi-transparent blue */
+}
+
+/* Hover effect */
+.logo:hover .logo-text {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .logo-text {
+        font-size: 1.2rem;
+        padding: 0.4rem 0.8rem;
+    }
 }

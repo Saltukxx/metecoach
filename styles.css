@@ -418,63 +418,72 @@ body {
     }
 }
 /* About Section */
-.section {
-    padding: 8rem 0;
-}
-
-.container {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 2rem;
-}
-
 .about-content {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 4rem;
     align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
 }
 
 .about-image {
     position: relative;
-    border-radius: var(--border-radius);
+    width: 100%;
+    border-radius: 12px;
     overflow: hidden;
 }
 
 .about-image img {
     width: 100%;
     height: auto;
-    transform: scale(1.1);
-    transition: transform var(--transition-medium);
-}
-
-.about-image:hover img {
-    transform: scale(1);
+    object-fit: cover;
+    border-radius: 12px;
+    display: block;
 }
 
 .experience-badge {
     position: absolute;
     bottom: 2rem;
     right: 2rem;
-    background: var(--primary-color);
-    color: var(--light-text);
+    background: #4169e1;
+    color: white;
     padding: 1rem;
-    border-radius: var(--border-radius);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transform: rotate(10deg);
+    border-radius: 8px;
+    font-weight: 600;
+    z-index: 2;
 }
 
-.experience-badge span:first-child {
-    font-size: 2.5rem;
-    font-weight: 700;
-    line-height: 1;
-}
+/* Mobile layout */
+@media (max-width: 768px) {
+    .about-content {
+        grid-template-columns: 1fr;  /* Single column */
+        gap: 2rem;
+        padding: 1rem;
+    }
 
-.about-text h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
+    /* Force image to top */
+    .about-content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .about-image {
+        order: -1;  /* Moves image to top */
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+
+    .about-text {
+        text-align: center;  /* Center text on mobile */
+    }
+
+    .experience-badge {
+        bottom: 1rem;
+        right: 1rem;
+        padding: 0.75rem;
+    }
 }
 
 features-grid {

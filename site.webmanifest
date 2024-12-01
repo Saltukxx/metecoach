@@ -1,0 +1,21 @@
+{
+    "name": "Mete Coach",
+    "short_name": "Mete Coach",
+    "description": "Profesyonel Yüzme Eğitimi",
+    "icons": [
+        {
+            "src": "/icon-192x192.png",
+            "sizes": "192x192",
+            "type": "banner2.jpg"
+        },
+        {
+            "src": "/icon-512x512.png",
+            "sizes": "512x512",
+            "type": "banner1.jpg"
+        }
+    ],
+    "theme_color": "#4169e1",
+    "background_color": "#ffffff",
+    "display": "standalone",
+    "start_url": "/"
+}

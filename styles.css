@@ -1234,3 +1234,16 @@ features-grid {
         background: url('hero-poster.jpg') center/cover no-repeat;
     }
 }
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        135deg,
+        rgba(37, 99, 235, 0.4),  /* Even lighter */
+        rgba(59, 130, 246, 0.4)   /* Even lighter */
+    );
+}

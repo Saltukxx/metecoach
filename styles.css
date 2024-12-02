@@ -230,8 +230,7 @@ body {
     height: 100%;
     background: linear-gradient(
         135deg,
-        rgba(37, 99, 235, 0.6),
-        rgba(59, 130, 246, 0.6)
+        
     );
     z-index: 1;
 }
@@ -252,12 +251,14 @@ body {
     margin-bottom: 1.5rem;
     line-height: 1.2;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: #8B5CF6;
 }
 
 .hero p {
     font-size: 1.5rem;
     margin-bottom: 3rem;
     opacity: 0.9;
+  
 }
 
 .hero-cta {
@@ -277,7 +278,7 @@ body {
 
 .primary-btn {
     background: #f8fafc;
-    color: #2563eb;
+    color: #8B5CF6;
 }
 
 .secondary-btn {
@@ -459,7 +460,7 @@ body {
     position: absolute;
     bottom: 2rem;
     right: 2rem;
-    background: #4169e1;
+    background:#8B5CF6;
     color: white;
     padding: 1rem;
     border-radius: 8px;
@@ -536,98 +537,145 @@ features-grid {
     margin: 0; /* Remove default margin */
 }
 
-/* Services Section */
-.section-header {
+/* Services Section Background and Container */
+#services {
+    position: relative;
+    background-image: url('banner6.jpg'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 6rem 0;
+    color: white;
+}
+
+/* Overlay for better readability */
+#services::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        135deg,
+        rgba(15, 23, 42, 0.9),  /* Dark overlay */
+       
+    );
+    z-index: 1;
+}
+
+/* Ensure content stays above overlay */
+#services .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Section Header Styles */
+#services .section-header {
     text-align: center;
     margin-bottom: 4rem;
+    color: white;
 }
 
-.section-header h2 {
+#services .section-header h2 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
+    color: white;
 }
 
-.section-divider {
+#services .section-divider {
     width: 80px;
     height: 4px;
-    background: var(--primary-color);
+    background: white;
     margin: 1rem auto;
     border-radius: 2px;
 }
 
+/* Services Grid and Cards */
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+    align-items: start;
 }
 
 .service-card {
-    background: white;
-    padding: 2rem;
-    border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow);
-    transition: all var(--transition-fast);
-    text-align: center;
     position: relative;
-    overflow: hidden;
+    perspective: 1000px;
+    height: 500px;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
 }
 
-.service-card:hover {
-    transform: translateY(-10px);
-    box-shadow: var(--box-shadow-hover);
+.service-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
 }
 
-.service-icon {
-    font-size: 3rem;
-    color: var(--primary-color);
-    margin-bottom: 1rem;
+/* Card Front */
+.service-card-front {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    backface-visibility: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-.service-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    color: var(--text-color);
+/* Card Back */
+.service-card-back {
+    background: #8B5CF6;
+    color: white;
+    border-radius: 15px;
+    padding: 2rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-.service-card p {
-    font-size: 1rem;
-    color: var(--gray-text);
-    margin-bottom: 1.5rem;
-    line-height: 1.6;
+/* Card Hover Effect */
+.service-card:hover .service-card-inner {
+    transform: rotateY(180deg);
 }
 
-.service-btn {
-    display: inline-block;
-    padding: 0.75rem 1.5rem;
-    margin-top: 1rem;
-    background: var(--primary-color);
-    color: var(--light-text);
-    text-decoration: none;
-    border-radius: var(--border-radius);
-    transition: all var(--transition-fast);
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    #services {
+        background-attachment: scroll;
+    }
 }
 
-.service-btn:hover {
-    background: var(--primary-dark);
-    transform: translateY(-2px);
-}
-
-/* Add responsive design for smaller screens */
 @media (max-width: 768px) {
-    .service-card {
-        padding: 1.5rem;
+    #services {
+        padding: 4rem 0;
     }
-
-    .service-icon {
-        font-size: 2.5rem;
+    
+    #services .section-header h2 {
+        font-size: 2rem;
     }
-
-    .service-card h3 {
-        font-size: 1.3rem;
-    }
-
-    .service-card p {
-        font-size: 0.9rem;
+    
+    .services-grid {
+        padding: 1rem;
+        gap: 1.5rem;
     }
 }
 
@@ -662,7 +710,7 @@ features-grid {
 .gallery-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(37, 99, 235, 0.8);
+    background: #8B5CF6;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1296,7 +1344,7 @@ features-grid {
 
 .service-icon {
     font-size: 2.5rem;
-    color: #4169e1;
+    color: #8B5CF6;
     margin-bottom: 1.5rem;
 }
 
@@ -1313,7 +1361,7 @@ features-grid {
 }
 
 .detayli-bilgi {
-    background: #4169e1;
+    background: #8B5CF6;
     color: white;
     padding: 0.75rem 1.5rem;
     border-radius: 8px;
@@ -1324,7 +1372,7 @@ features-grid {
 }
 
 .detayli-bilgi:hover {
-    background: #3154c4;
+    background: #8B5CF6;
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(65, 105, 225, 0.2);
 }
@@ -1461,13 +1509,13 @@ features-grid {
 }
 
 .service-icon {
-    color: #4169E1;
+    color: #8B5CF6#8B5CF6;
     font-size: 2.5rem;
     margin-bottom: 1.5rem;
 }
 
-.service-card-back {
-    background: #4169E1;
+.service-card-back {#8B5CF6
+    background: #8B5CF6;
     color: white;
     transform: rotateY(180deg);
     display: flex;
@@ -1500,7 +1548,7 @@ features-grid {
     display: inline-block;
     padding: 0.75rem 1.5rem;
     background: white;
-    color: #4169E1;
+    color: #8B5CF6;
     text-decoration: none;
     border-radius: 8px;
     font-weight: 500;

@@ -1,4 +1,3 @@
-// Enhanced JavaScript for Mete Coach website
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize all required elements
     const preloader = document.querySelector('.preloader');
@@ -9,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const sections = document.querySelectorAll('section[id]');
     const backToTopButton = document.querySelector('.back-to-top');
     const contactForm = document.querySelector('.contact-form');
+    const serviceCards = document.querySelectorAll('.service-card');
     
     // Preloader with minimum display time
     const minimumLoadTime = 1000; // 1 second minimum loader display
@@ -25,6 +25,41 @@ document.addEventListener('DOMContentLoaded', function() {
                 preloader.style.display = 'none';
             }, 500);
         }, timeRemaining);
+    });
+
+    // Handle service cards for touch devices
+    function handleServiceCards() {
+        if (window.innerWidth <= 1024) {
+            serviceCards.forEach(card => {
+                card.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    serviceCards.forEach(otherCard => {
+                        if (otherCard !== card) {
+                            otherCard.classList.remove('active');
+                        }
+                    });
+                    this.classList.toggle('active');
+                });
+            });
+
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('.service-card')) {
+                    serviceCards.forEach(card => card.classList.remove('active'));
+                }
+            });
+        }
+    }
+
+    // Initialize service cards
+    handleServiceCards();
+
+    // Update service cards behavior on resize
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+            handleServiceCards();
+        }, 250);
     });
 
     // Smooth Scrolling for Navigation Links
@@ -119,19 +154,36 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Animate Elements on Scroll
+    // Enhanced Animate Elements on Scroll
     const animateOnScrollObserver = new IntersectionObserver(
         (entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
+                    // Add will-change before animation
+                    entry.target.style.willChange = 'opacity, transform';
+                    
+                    // Trigger animation
+                    setTimeout(() => {
+                        entry.target.classList.add('active');
+                    }, 100);
+
+                    // Cleanup will-change after animation
+                    setTimeout(() => {
+                        entry.target.style.willChange = 'auto';
+                    }, 1000);
+
                     observer.unobserve(entry.target);
                 }
             });
         },
-        { threshold: 0.2 }
+        { 
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.2 
+        }
     );
 
+    // Select and observe all animated elements
     document.querySelectorAll('.animate-on-scroll').forEach(element => {
         animateOnScrollObserver.observe(element);
     });

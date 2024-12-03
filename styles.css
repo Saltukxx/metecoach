@@ -251,7 +251,7 @@ body {
     margin-bottom: 1.5rem;
     line-height: 1.2;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    color: #8B5CF6;
+    color: #2563eb;
 }
 
 .hero p {
@@ -278,7 +278,7 @@ body {
 
 .primary-btn {
     background: #f8fafc;
-    color: #8B5CF6;
+    color: #2563eb;
 }
 
 .secondary-btn {
@@ -460,7 +460,7 @@ body {
     position: absolute;
     bottom: 2rem;
     right: 2rem;
-    background:#8B5CF6;
+    background: #4169e1;
     color: white;
     padding: 1rem;
     border-radius: 8px;
@@ -634,7 +634,7 @@ features-grid {
 
 /* Card Back */
 .service-card-back {
-    background: #8B5CF6;
+    background: rgba(37, 99, 235, 0.95);
     color: white;
     border-radius: 15px;
     padding: 2rem;
@@ -682,6 +682,51 @@ features-grid {
 
 
 /* Gallery Section - New Optimized Styles */
+/* Gallery Section Header Styles */
+#gallery .section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding-top: 4rem;
+}
+
+#gallery .section-header h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 1rem;
+}
+
+#gallery .section-divider {
+    width: 80px;
+    height: 4px;
+    background: #2563eb;
+    margin: 1rem auto;
+    border-radius: 2px;
+}
+
+#gallery .section-header p {
+    font-size: 1.2rem;
+    color: #64748b;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #gallery .section-header {
+        padding-top: 3rem;
+        margin-bottom: 2rem;
+    }
+
+    #gallery .section-header h2 {
+        font-size: 2rem;
+    }
+
+    #gallery .section-header p {
+        font-size: 1.1rem;
+        padding: 0 1rem;
+    }
+}
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -698,6 +743,7 @@ features-grid {
     aspect-ratio: 4/3;
     box-shadow: var(--box-shadow);
     transition: all var(--transition-medium);
+    background: #f8fafc; /* Light background while images load */
 }
 
 .gallery-item img {
@@ -705,17 +751,19 @@ features-grid {
     height: 100%;
     object-fit: cover;
     transition: transform var(--transition-medium);
+    display: block; /* Remove any potential spacing */
 }
 
 .gallery-overlay {
     position: absolute;
     inset: 0;
-    background: #8B5CF6;
+    background: rgba(37, 99, 235, 0.8);
     display: flex;
     align-items: center;
     justify-content: center;
     opacity: 0;
     transition: opacity var(--transition-fast);
+    pointer-events: none; /* Ensures image remains clickable */
 }
 
 .gallery-overlay i {
@@ -755,29 +803,44 @@ features-grid {
     border-radius: var(--border-radius);
 }
 
-/* Rest of your existing CSS remains the same but update media queries */
+/* Custom loading state */
+.gallery-item.loading {
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.7; }
+    100% { opacity: 1; }
+}
+
+/* Media Queries */
 @media (max-width: 1024px) {
-    /* Keep existing styles */
     .gallery-grid {
         grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     }
 }
 
 @media (max-width: 768px) {
-    /* Keep existing styles */
     .gallery-grid {
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 1rem;
+        padding: 0.5rem;
     }
     
     .about-image img {
         height: 300px;
     }
+
+    .gallery-item {
+        aspect-ratio: 4/3; /* Maintain aspect ratio on mobile */
+    }
 }
 
 @media (max-width: 480px) {
-    /* Keep existing styles */
     .gallery-grid {
         grid-template-columns: 1fr;
+        gap: 1rem;
     }
     
     .about-image img {
@@ -789,7 +852,7 @@ features-grid {
     }
 }
 
-/* Add missing animations */
+/* Ensure animations are present */
 @keyframes wave {
     0% {
         transform: scale(0);
@@ -899,6 +962,62 @@ features-grid {
     }
 }
 /* Contact Section Styles */
+/* Contact Section Header Styles */
+#contact .section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding-top: 4rem;
+}
+
+#contact .section-header h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 1rem;
+}
+
+#contact .section-divider {
+    width: 80px;
+    height: 4px;
+    background: #2563eb;
+    margin: 1rem auto;
+    border-radius: 2px;
+}
+
+#contact .section-header p {
+    font-size: 1.2rem;
+    color: #64748b;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #contact .section-header {
+        padding-top: 3rem;
+        margin-bottom: 2rem;
+    }
+
+    #contact .section-header h2 {
+        font-size: 2rem;
+    }
+
+    #contact .section-header p {
+        font-size: 1.1rem;
+        padding: 0 1rem;
+    }
+}
+
+/* If the contact section has a different background, use these styles */
+#contact.section {
+    background-color: var(--background-light);
+    padding: 4rem 0;
+}
+
+/* Add some spacing between the header and the contact form/info */
+.contact-grid {
+    margin-top: 2rem;
+}
 .contact-grid {
     display: grid;
     grid-template-columns: 3fr 2fr;
@@ -1344,7 +1463,7 @@ features-grid {
 
 .service-icon {
     font-size: 2.5rem;
-    color: #8B5CF6;
+    color: #4169e1;
     margin-bottom: 1.5rem;
 }
 
@@ -1361,7 +1480,7 @@ features-grid {
 }
 
 .detayli-bilgi {
-    background: #8B5CF6;
+    background: #4169e1;
     color: white;
     padding: 0.75rem 1.5rem;
     border-radius: 8px;
@@ -1372,7 +1491,7 @@ features-grid {
 }
 
 .detayli-bilgi:hover {
-    background: #8B5CF6;
+    background: #3154c4;
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(65, 105, 225, 0.2);
 }
@@ -1400,7 +1519,7 @@ features-grid {
     font-family: 'Poppins', sans-serif;
     font-size: 24px;
     font-weight: 700;
-    color: #8B5CF6;  /* Purple color */
+    color: #2563eb;  /* Purple color */
     letter-spacing: 1px;
     position: relative;
     padding-bottom: 2px;
@@ -1413,8 +1532,8 @@ features-grid {
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 2px;
-    background-color: #8B5CF6;
+    height: 4px;
+    background-color: #2563eb;
     transform: scaleX(0);
     transition: transform 0.3s ease;
 }
@@ -1509,13 +1628,13 @@ features-grid {
 }
 
 .service-icon {
-    color: #8B5CF6#8B5CF6;
+    color: #4169E1;
     font-size: 2.5rem;
     margin-bottom: 1.5rem;
 }
 
-.service-card-back {#8B5CF6
-    background: #8B5CF6;
+.service-card-back {
+    background: #4169E1;
     color: white;
     transform: rotateY(180deg);
     display: flex;
@@ -1548,7 +1667,7 @@ features-grid {
     display: inline-block;
     padding: 0.75rem 1.5rem;
     background: white;
-    color: #8B5CF6;
+    color: #4169E1;
     text-decoration: none;
     border-radius: 8px;
     font-weight: 500;
@@ -1559,4 +1678,93 @@ features-grid {
 .service-btn:hover {
     background: rgba(255, 255, 255, 0.9);
     transform: translateY(-2px);
+}
+/* Base Animation Classes */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    will-change: opacity, transform;
+}
+
+.animate-on-scroll.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Fade In Animation Variations */
+.fade-in {
+    opacity: 0;
+    transform: translateY(0);
+}
+
+.fade-in.active {
+    opacity: 1;
+}
+
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.fade-in-up.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.fade-in-down {
+    opacity: 0;
+    transform: translateY(-30px);
+}
+
+.fade-in-down.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.fade-in-left {
+    opacity: 0;
+    transform: translateX(-30px);
+}
+
+.fade-in-left.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.fade-in-right {
+    opacity: 0;
+    transform: translateX(30px);
+}
+
+.fade-in-right.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Animation Delays */
+.delay-200 { transition-delay: 0.2s; }
+.delay-400 { transition-delay: 0.4s; }
+.delay-600 { transition-delay: 0.6s; }
+.delay-800 { transition-delay: 0.8s; }
+.delay-1000 { transition-delay: 1s; }
+
+/* Scale Animations */
+.scale-up {
+    opacity: 0;
+    transform: scale(0.8);
+}
+
+.scale-up.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Ensure animations don't play on devices that prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .animate-on-scroll {
+        transition: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
 }

@@ -360,3 +360,50 @@ document.addEventListener('DOMContentLoaded', function() {
     updateActiveNavLink();
     document.body.classList.add('loaded');
 });
+
+// Initialize the Intersection Observer
+const animateOnScrollObserver = new IntersectionObserver(
+    (entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Add will-change before animation
+                entry.target.style.willChange = 'opacity, transform';
+                
+                // Trigger animation
+                entry.target.classList.add('active');
+
+                // Cleanup will-change after animation
+                setTimeout(() => {
+                    entry.target.style.willChange = 'auto';
+                }, 1000);
+
+                // Stop observing after animation
+                observer.unobserve(entry.target);
+            }
+        });
+    },
+    { 
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.2 
+    }
+);
+
+// Function to initialize animations
+function initScrollAnimations() {
+    // Select all elements with animation classes
+    const animatedElements = document.querySelectorAll('.animate-on-scroll');
+    
+    // Start observing each element
+    animatedElements.forEach(element => {
+        animateOnScrollObserver.observe(element);
+    });
+}
+
+// Initialize when DOM is loaded
+document.addEventListener('DOMContentLoaded', initScrollAnimations);
+
+// Reinitialize on dynamic content load
+function refreshScrollAnimations() {
+    initScrollAnimations();
+}

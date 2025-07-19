@@ -1,391 +1,660 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mete Coach - Profesyonel Yüzme Eğitimi</title>
+    <title data-i18n="title">MeteoCoach - Professional Swimming Coach</title>
+    <meta name="description" content="Professional swimming coaching services with personalized training programs">
+    <meta name="keywords" content="swimming, coach, training, lessons, competitive swimming">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Styles -->
     <link rel="stylesheet" href="styles.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <meta name="theme-color" content="#4169e1">
 </head>
 <body>
-    <!-- Modern Preloader -->
-    <div class="preloader">
-        <div class="loader-content">
-            <div class="wave"></div>
-            <div class="wave"></div>
-            <div class="wave"></div>
-        </div>
-    </div>
-
-    <!-- Enhanced Navigation -->
-    <nav class="navbar">
+    <!-- Navigation -->
+    <nav class="navbar glass-nav">
         <div class="nav-container">
-            <a href="#home" class="logo">
-                <span class="logo-text">METE COACH</span>
-            </a>
-            <div class="menu-toggle">
-                <div class="hamburger">
-                    <span></span><span></span><span></span>
-                </div>
+            <div class="nav-brand">
+                <h2>MeteoCoach</h2>
             </div>
-            <div class="nav-links">
-                <a href="#home" class="active">Ana Sayfa</a>
-                <a href="#about">Hakkımızda</a>
-                <a href="#services">Hizmetler</a>
-                <a href="#gallery">Galeri</a>
-                <a href="#contact" class="nav-cta">İletişim</a>
+            
+            <div class="nav-menu" id="nav-menu">
+                <a href="#home" class="nav-link" data-i18n="nav.home">Home</a>
+                <a href="#about" class="nav-link" data-i18n="nav.about">About</a>
+                <a href="#services" class="nav-link" data-i18n="nav.services">Services</a>
+                <a href="#programs" class="nav-link" data-i18n="nav.programs">Programs</a>
+                <a href="#testimonials" class="nav-link" data-i18n="nav.testimonials">Testimonials</a>
+                <a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a>
+            </div>
+            
+            <div class="nav-extras">
+                <div class="language-selector">
+                    <button class="lang-btn active" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="tr">TR</button>
+                    <button class="lang-btn" data-lang="de">DE</button>
+                    <button class="lang-btn" data-lang="ru">RU</button>
+                </div>
+                
+                <div class="nav-toggle" id="nav-toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
             </div>
         </div>
     </nav>
 
-<!-- Hero Section with Video -->
-<section id="home" class="section hero">
-    <div class="hero-particles"></div>
-
-    <div class="hero-content">
-        <h1 class="animate-on-scroll fade-in-up" id="profesyonel-yüzme-eğitimi">
-            Profesyonel Yüzme Eğitimi
-        </h1>
-
-        <p class="animate-on-scroll fade-in-up">
-            Her yaşa ve seviyeye uygun özel yüzme dersleri
-        </p>
-
-        <div class="hero-cta animate-on-scroll fade-in-up delay-400">
-            <a href="#contact" class="primary-btn">Yüzmeye Başla</a>
-            <a href="#about" class="secondary-btn">Daha Fazla Bilgi</a>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <!-- Cinematic Video Background -->
+        <div class="hero-video-container">
+            <video 
+                class="hero-video" 
+                autoplay 
+                muted 
+                loop 
+                playsinline
+                preload="metadata"
+                poster="hero.jpg.jpg"
+                id="heroVideo"
+            >
+                <source src="expor.mp4" type="video/mp4">
+                <!-- Fallback for older browsers -->
+                Your browser does not support the video tag.
+            </video>
+            
+            <!-- Video overlay gradients -->
+            <div class="video-overlay-gradient"></div>
+            <div class="video-overlay-pattern"></div>
+            
+            <!-- Video controls -->
+            <div class="video-controls">
+                <button class="video-toggle" id="videoToggle" aria-label="Toggle video playback">
+                    <i class="fas fa-pause"></i>
+                </button>
+                <div class="video-sound-toggle" id="soundToggle" aria-label="Toggle sound">
+                    <i class="fas fa-volume-mute"></i>
+                </div>
+            </div>
         </div>
-
-        <div class="hero-stats">
-            <div class="stat animate-on-scroll fade-in-up delay-600">
-                <span class="counter" data-target="+500">0</span>
-                <span class="stat-label">Öğrenci</span>
-            </div>
-
-            <div class="stat animate-on-scroll fade-in-up delay-700">
-                <span class="counter" data-target="+25">0</span>
-                <span class="stat-label">Yıllık Deneyim</span>
-            </div>
-
-            <div class="stat animate-on-scroll fade-in-up delay-800">
-                <span class="counter" data-target="+100">0</span>
-                <span class="stat-label">Başarı Belgesi</span>
+        
+        <!-- Fallback background for mobile/slow connections -->
+        <div class="hero-background-fallback">
+            <div class="wave-animation"></div>
+        </div>
+        
+        <div class="hero-content">
+            <div class="hero-text glass-card">
+                <h1 class="hero-title" data-i18n="hero.title">Elite Swimming Coach</h1>
+                <p class="hero-subtitle" data-i18n="hero.subtitle">Transform your swimming potential with personalized coaching that delivers results</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" data-i18n="hero.cta.book">Book a Session</button>
+                    <button class="btn btn-secondary" data-i18n="hero.cta.learn">Learn More</button>
+                </div>
             </div>
         </div>
-    </div>
+        
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
 
-    <div class="scroll-indicator">
-        <div class="mouse"></div>
-        <span>Kaydır</span>
-    </div>
-</section>
-
-    <!-- Enhanced About Section -->
-    <section id="about" class="section">
+    <!-- About Section -->
+    <section id="about" class="about">
         <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-i18n="about.title">About MeteoCoach</h2>
+                <p class="section-subtitle" data-i18n="about.subtitle">Your journey to swimming excellence starts here</p>
+            </div>
+            
             <div class="about-content">
-                <div class="about-image animate-on-scroll fade-in-left">
-                    <img src="banner3.jpg" alt="Mete Coach Yüzme Eğitimi">
-                    <div class="experience-badge">
-                        <span>+25</span>
-                        <span>Yıllık Deneyim</span>
-                    </div>
-                </div>
-                <div class="about-text animate-on-scroll fade-in-right">
-                    <h2>Profesyonel Yüzme Eğitimi</h2>
-                    <div class="features-grid">
-                        <div class="feature">
-                            <i class="fas fa-user-graduate"></i>
-                            <h5>Uzman Eğitmen |</h5>
-                            <h3>Bahadır Mete Horasan</h3>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-swimming-pool"></i>
-                            <h5>Modern Tesisler |</h5>
-                            <h3>25m Yarı Olimpik Havuz | 15m Çocuk Çırpınma Havuzu</h3>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-shield-alt"></i>
-                            <h5>Güvenli Ortam |</h5>
-                            <h3>Can Kurtaran Belgesi | İlk Yardım Belgesi</h3>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-user-clock"></i>
-                            <h5>Kişiye Özel Program |</h5>
-                            <h3>Performans sporcuları için haftalık, aylık ve yıllık yüzme programları hazırlanır.</h3>
-                            <h3>Kilo vermek isteyen bireyler için özel yüzme programları oluşturulur.</h3>
-                            <h3>Atletik becerilerini geliştirmek isteyenler için kişiye özel programlar hazırlanır.</h3>
-                        </div>
-                    </div>
-                    <a href="#contact" class="about-cta"></a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Modern Services Section -->
-    <section id="services" class="section">
-        <div id="services" class="section">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Hizmetlerimiz</h2>
-                    <div class="section-divider"></div>
-                    <p>Size özel hazırlanmış yüzme programları</p>
-                </div>
-        
-                <div class="services-grid">
-                    <!-- Bireysel Dersler -->
-                    <div class="service-card">
-                        <div class="service-card-inner">
-                            <div class="service-card-front">
-                                <div class="service-icon">
-                                    <i class="fas fa-user"></i>
-                                </div>
-                                <h3>Bireysel Dersler</h3>
-                                <p>Birebir olarak gerçekleştirilen özel yüzme dersleri.</p>
+                <div class="about-text glass-card">
+                    <h3 data-i18n="about.passion.title">Passion Meets Expertise</h3>
+                    <p data-i18n="about.passion.text">With over 15 years of competitive swimming and coaching experience, I've dedicated my life to helping swimmers of all levels achieve their goals. From beginners taking their first strokes to elite athletes preparing for international competitions.</p>
+                    
+                    <div class="achievements">
+                        <div class="achievement">
+                            <i class="fas fa-medal"></i>
+                            <div>
+                                <h4 data-i18n="about.achievements.certified">Certified Master Coach</h4>
+                                <p data-i18n="about.achievements.certified.desc">International Swimming Federation</p>
                             </div>
-                            <div class="service-card-back">
-                                <h3>Bireysel Dersler</h3>
-                                <p>Birebir olarak gerçekleştirilen bu dersler, danışanın tercihlerine göre şekillendirilir. İster danışanın kendi havuzunda ister Coach'un ayarlayacağı uygun bir havuzda yapılabilir.</p>
-                                
+                        </div>
+                        <div class="achievement">
+                            <i class="fas fa-trophy"></i>
+                            <div>
+                                <h4 data-i18n="about.achievements.olympian">Former Olympian</h4>
+                                <p data-i18n="about.achievements.olympian.desc">2x Olympic Qualifier</p>
+                            </div>
+                        </div>
+                        <div class="achievement">
+                            <i class="fas fa-graduation-cap"></i>
+                            <div>
+                                <h4 data-i18n="about.achievements.education">Sports Science Degree</h4>
+                                <p data-i18n="about.achievements.education.desc">Masters in Exercise Physiology</p>
                             </div>
                         </div>
                     </div>
-        
-                    <!-- Grup Dersleri -->
-                    <div class="service-card">
-                        <div class="service-card-inner">
-                            <div class="service-card-front">
-                                <div class="service-icon">
-                                    <i class="fas fa-users"></i>
-                                </div>
-                                <h3>Grup Dersleri</h3>
-                                <p>Maksimum 3 kişilik gruplar için özel yüzme dersleri.</p>
-                            </div>
-                            <div class="service-card-back">
-                                <h3>Grup Dersleri</h3>
-                                <p>Maksimum 3 kişiden oluşan grup dersleri, seviyeleri birbirine yakın olan danışanların bir araya gelerek aldığı eğitimlerden oluşur.</p>
-                               
-                            </div>
-                        </div>
-                    </div>
-        
-                    <!-- Çocuk Yüzme -->
-                    <div class="service-card">
-                        <div class="service-card-inner">
-                            <div class="service-card-front">
-                                <div class="service-icon">
-                                    <i class="fas fa-child"></i>
-                                </div>
-                                <h3>Çocuk Yüzme Dersleri</h3>
-                                <p>5 yaş ve üzeri çocuklar için özel yüzme dersleri.</p>
-                            </div>
-                            <div class="service-card-back">
-                                <h3>Çocuk Yüzme Dersleri</h3>
-                                <p>5 yaş ve üzeri çocuklar için düzenlenen bu derslerde, suda kalma becerisi, güvenli suda kalma çalışmaları ve yüzme teknikleri üzerine eğitimler verilmektedir.</p>
-                                
-                            </div>
-                        </div>
-                    </div>
-        
-                    <!-- Atletik Performans -->
-                    <div class="service-card">
-                        <div class="service-card-inner">
-                            <div class="service-card-front">
-                                <div class="service-icon">
-                                    <i class="fas fa-dumbbell"></i>
-                                </div>
-                                <h3>Atletik Performans</h3>
-                                <p>Kara antrenmanları ve performans geliştirme programları.</p>
-                            </div>
-                            <div class="service-card-back">
-                                <h3>Atletik Performans</h3>
-                                <p>Yüzücülere yönelik olarak kuvvet ve dayanıklılığı artırmayı hedefleyen, karada gerçekleştirilen antrenman programlarıdır. Dersler online veya yüz yüze uygulanmaktadır.</p>
-                            
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-   <!-- Modern Gallery Section -->
-<section id="gallery" class="section">
-    <div class="container">
-        <div class="section-header animate-on-scroll fade-in-up">
-            <h2>Galeri</h2>
-            <div class="section-divider"></div>
-            <p>Eğitimlerden kareler</p>
-        </div>
-        
-        <div class="gallery-grid">
-           
-            
-            <div class="gallery-item animate-on-scroll fade-in-up">
-                <img src="banner3.jpg" alt="Yüzme Eğitimi">
-                <div class="gallery-overlay">
-                    <i class="fas fa-plus"></i>
-                </div>
-            </div>
-            
-            <div class="gallery-item animate-on-scroll fade-in-up">
-                <img src="banner4.jpg" alt="Yüzme Eğitimi">
-                <div class="gallery-overlay">
-                    <i class="fas fa-plus"></i>
-                </div>
-            </div>
-
-            <div class="gallery-item animate-on-scroll fade-in-up">
-                <img src="banner5.jpg" alt="Yüzme Eğitimi">
-                <div class="gallery-overlay">
-                    <i class="fas fa-plus"></i>
-                </div>
-            </div>
-
-            <div class="gallery-item animate-on-scroll fade-in-up">
-                <img src="banner6.jpg" alt="Yüzme Eğitimi">
-                <div class="gallery-overlay">
-                    <i class="fas fa-plus"></i>
-                </div>
-            </div>
-
-            <div class="gallery-item animate-on-scroll fade-in-up">
-                <img src="banner7.jpg" alt="Yüzme Eğitimi">
-                <div class="gallery-overlay">
-                    <i class="fas fa-plus"></i>
-                </div>
-            </div>
-
-            <div class="gallery-item animate-on-scroll fade-in-up">
-                <img src="banner88.jpg" alt="Yüzme Eğitimi">
-                <div class="gallery-overlay">
-                    <i class="fas fa-plus"></i>
-                </div>
-            </div>
-
-            <div class="gallery-item animate-on-scroll fade-in-up">
-                <img src="banner10.jpg" alt="Yüzme Eğitimi">
-                <div class="gallery-overlay">
-                    <i class="fas fa-plus"></i>
-                </div>
-            </div>
-           
-            <div class="gallery-item animate-on-scroll fade-in-up">
-                <img src="banner12.jpg" alt="Yüzme Eğitimi">
-                <div class="gallery-overlay">
-                    <i class="fas fa-plus"></i>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-    <section id="contact" class="section">
-        <div class="container">
-            <div class="section-header animate-on-scroll fade-in-up">
-                <h2>İletişim</h2>
-                <div class="section-divider"></div>
-                <p>Bizimle iletişime geçin</p>
-            </div>
-            
-            <div class="contact-grid">
-                <div class="contact-form-container animate-on-scroll fade-in-left">
-                    <form class="contact-form">
-                        <div class="form-group">
-                            <input type="text" id="name" placeholder=" " required>
-                            <label for="name">Adınız Soyadınız</label>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" id="email" placeholder=" " required>
-                            <label for="email">E-posta Adresiniz</label>
-                        </div>
-                        <div class="form-group">
-                            <input type="tel" id="phone" placeholder=" " required>
-                            <label for="phone">Telefon Numaranız</label>
-                        </div>
-                        <div class="form-group">
-                            <textarea id="message" placeholder=" " required></textarea>
-                            <label for="message">Mesajınız</label>
-                        </div>
-                        <button type="submit" class="submit-btn">
-                            <span>Gönder</span>
-                            <i class="fas fa-paper-plane"></i>
-                        </button>
-                    </form>
                 </div>
                 
-                <div class="contact-info animate-on-scroll fade-in-right">
-                    <div class="contact-card">
-                        <h3><i class="fas fa-map-marker-alt"></i> Adres</h3>
-                        <p>Bodrum, Türkiye</p>
-                    </div>
-                    <div class="contact-card">
-                        <h3><i class="fas fa-phone"></i> Telefon</h3>
-                        <p>+90 (532) 293 38 42</p>
-                    </div>
-                    <div class="contact-card">
-                        <h3><i class="fas fa-envelope"></i> E-posta</h3>
-                        <p>mete_horasan@yahoo.com</p>
+                <div class="about-image glass-card">
+                    <img src="hero.jpg.jpg" alt="MeteoCoach" class="coach-image">
+                    <div class="image-overlay">
+                        <div class="play-button">
+                            <i class="fas fa-play"></i>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Modern Footer -->
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-i18n="services.title">Coaching Services</h2>
+                <p class="section-subtitle" data-i18n="services.subtitle">Comprehensive training programs tailored to your needs</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card glass-card">
+                    <div class="service-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3 data-i18n="services.private.title">Private Coaching</h3>
+                    <p data-i18n="services.private.description">One-on-one personalized training sessions focused on your specific goals and technique improvement.</p>
+                    <ul class="service-features">
+                        <li data-i18n="services.private.feature1">Personalized training plans</li>
+                        <li data-i18n="services.private.feature2">Video analysis</li>
+                        <li data-i18n="services.private.feature3">Flexible scheduling</li>
+                        <li data-i18n="services.private.feature4">Progress tracking</li>
+                    </ul>
+                    <div class="service-price">
+                        <span class="price">€80</span>
+                        <span class="period" data-i18n="services.period">/session</span>
+                    </div>
+                </div>
+                
+                <div class="service-card glass-card featured">
+                    <div class="featured-badge" data-i18n="services.popular">Most Popular</div>
+                    <div class="service-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 data-i18n="services.group.title">Group Sessions</h3>
+                    <p data-i18n="services.group.description">Small group training sessions that combine individual attention with the motivation of training partners.</p>
+                    <ul class="service-features">
+                        <li data-i18n="services.group.feature1">Max 4 swimmers per group</li>
+                        <li data-i18n="services.group.feature2">Skill-based grouping</li>
+                        <li data-i18n="services.group.feature3">Competitive environment</li>
+                        <li data-i18n="services.group.feature4">Team building exercises</li>
+                    </ul>
+                    <div class="service-price">
+                        <span class="price">€45</span>
+                        <span class="period" data-i18n="services.period">/session</span>
+                    </div>
+                </div>
+                
+                <div class="service-card glass-card">
+                    <div class="service-icon">
+                        <i class="fas fa-stopwatch"></i>
+                    </div>
+                    <h3 data-i18n="services.competitive.title">Competitive Training</h3>
+                    <p data-i18n="services.competitive.description">High-intensity training for competitive swimmers preparing for meets and championships.</p>
+                    <ul class="service-features">
+                        <li data-i18n="services.competitive.feature1">Race strategy development</li>
+                        <li data-i18n="services.competitive.feature2">Mental preparation</li>
+                        <li data-i18n="services.competitive.feature3">Performance analysis</li>
+                        <li data-i18n="services.competitive.feature4">Competition simulation</li>
+                    </ul>
+                    <div class="service-price">
+                        <span class="price">€100</span>
+                        <span class="period" data-i18n="services.period">/session</span>
+                    </div>
+                </div>
+                
+                <div class="service-card glass-card">
+                    <div class="service-icon">
+                        <i class="fas fa-laptop"></i>
+                    </div>
+                    <h3 data-i18n="services.online.title">Online Coaching</h3>
+                    <p data-i18n="services.online.description">Remote coaching services including training plan design and video analysis for distant athletes.</p>
+                    <ul class="service-features">
+                        <li data-i18n="services.online.feature1">Custom training plans</li>
+                        <li data-i18n="services.online.feature2">Video feedback</li>
+                        <li data-i18n="services.online.feature3">Weekly check-ins</li>
+                        <li data-i18n="services.online.feature4">Nutrition guidance</li>
+                    </ul>
+                    <div class="service-price">
+                        <span class="price">€150</span>
+                        <span class="period" data-i18n="services.period.month">/month</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section id="programs" class="programs">
+        <!-- Cinematic Video Background for Programs -->
+        <div class="programs-video-container">
+            <video 
+                class="programs-video" 
+                autoplay 
+                muted 
+                loop 
+                playsinline
+                preload="metadata"
+                poster="banner5.jpg"
+                id="programsVideo"
+            >
+                <source src="DJI_0977.MP4" type="video/mp4">
+                <!-- Fallback for older browsers -->
+                Your browser does not support the video tag.
+            </video>
+            
+            <!-- Video overlay gradients -->
+            <div class="programs-video-overlay-gradient"></div>
+            <div class="programs-video-overlay-pattern"></div>
+            
+            <!-- Video controls -->
+            <div class="programs-video-controls">
+                <button class="programs-video-toggle" id="programsVideoToggle" aria-label="Toggle video playback">
+                    <i class="fas fa-pause"></i>
+                </button>
+                <div class="programs-video-sound-toggle" id="programsSoundToggle" aria-label="Toggle sound">
+                    <i class="fas fa-volume-mute"></i>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Fallback background for mobile/slow connections -->
+        <div class="programs-background-fallback">
+            <div class="programs-wave-animation"></div>
+        </div>
+        
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-i18n="programs.title">Training Programs</h2>
+                <p class="section-subtitle" data-i18n="programs.subtitle">Structured pathways to swimming excellence</p>
+            </div>
+            
+            <div class="programs-tabs">
+                <button class="tab-btn active" data-tab="beginner" data-i18n="programs.tabs.beginner">Beginner</button>
+                <button class="tab-btn" data-tab="intermediate" data-i18n="programs.tabs.intermediate">Intermediate</button>
+                <button class="tab-btn" data-tab="advanced" data-i18n="programs.tabs.advanced">Advanced</button>
+                <button class="tab-btn" data-tab="elite" data-i18n="programs.tabs.elite">Elite</button>
+            </div>
+            
+            <div class="programs-content">
+                <div class="program-panel active glass-card" id="beginner">
+                    <div class="program-info">
+                        <h3 data-i18n="programs.beginner.title">Foundation Swimming Program</h3>
+                        <p data-i18n="programs.beginner.description">Perfect for new swimmers or those returning to the pool. Focus on building confidence and proper technique.</p>
+                        
+                        <div class="program-details">
+                            <div class="detail">
+                                <i class="fas fa-clock"></i>
+                                <span data-i18n="programs.beginner.duration">8-12 weeks</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-calendar"></i>
+                                <span data-i18n="programs.beginner.frequency">2-3 sessions/week</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-users"></i>
+                                <span data-i18n="programs.beginner.size">Max 6 students</span>
+                            </div>
+                        </div>
+                        
+                        <ul class="program-features">
+                            <li data-i18n="programs.beginner.feature1">Water safety and confidence building</li>
+                            <li data-i18n="programs.beginner.feature2">Basic stroke technique (freestyle, backstroke)</li>
+                            <li data-i18n="programs.beginner.feature3">Breathing coordination</li>
+                            <li data-i18n="programs.beginner.feature4">Pool etiquette and safety</li>
+                        </ul>
+                    </div>
+                    <div class="program-image">
+                        <img src="banner2.jpg" alt="Beginner Program">
+                    </div>
+                </div>
+                
+                <div class="program-panel glass-card" id="intermediate">
+                    <div class="program-info">
+                        <h3 data-i18n="programs.intermediate.title">Stroke Development Program</h3>
+                        <p data-i18n="programs.intermediate.description">For swimmers with basic skills ready to refine technique and build endurance across all four strokes.</p>
+                        
+                        <div class="program-details">
+                            <div class="detail">
+                                <i class="fas fa-clock"></i>
+                                <span data-i18n="programs.intermediate.duration">12-16 weeks</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-calendar"></i>
+                                <span data-i18n="programs.intermediate.frequency">3-4 sessions/week</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-users"></i>
+                                <span data-i18n="programs.intermediate.size">Max 4 students</span>
+                            </div>
+                        </div>
+                        
+                        <ul class="program-features">
+                            <li data-i18n="programs.intermediate.feature1">All four competitive strokes</li>
+                            <li data-i18n="programs.intermediate.feature2">Turns and starts technique</li>
+                            <li data-i18n="programs.intermediate.feature3">Endurance building</li>
+                            <li data-i18n="programs.intermediate.feature4">Individual medley introduction</li>
+                        </ul>
+                    </div>
+                    <div class="program-image">
+                        <img src="banner3.jpg" alt="Intermediate Program">
+                    </div>
+                </div>
+                
+                <div class="program-panel glass-card" id="advanced">
+                    <div class="program-info">
+                        <h3 data-i18n="programs.advanced.title">Performance Enhancement Program</h3>
+                        <p data-i18n="programs.advanced.description">High-level training for competitive swimmers focused on speed, efficiency, and race preparation.</p>
+                        
+                        <div class="program-details">
+                            <div class="detail">
+                                <i class="fas fa-clock"></i>
+                                <span data-i18n="programs.advanced.duration">16-20 weeks</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-calendar"></i>
+                                <span data-i18n="programs.advanced.frequency">4-5 sessions/week</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-users"></i>
+                                <span data-i18n="programs.advanced.size">Max 3 students</span>
+                            </div>
+                        </div>
+                        
+                        <ul class="program-features">
+                            <li data-i18n="programs.advanced.feature1">Advanced stroke refinement</li>
+                            <li data-i18n="programs.advanced.feature2">Speed and power development</li>
+                            <li data-i18n="programs.advanced.feature3">Race strategy and pacing</li>
+                            <li data-i18n="programs.advanced.feature4">Mental performance training</li>
+                        </ul>
+                    </div>
+                    <div class="program-image">
+                        <img src="banner4.jpg" alt="Advanced Program">
+                    </div>
+                </div>
+                
+                <div class="program-panel glass-card" id="elite">
+                    <div class="program-info">
+                        <h3 data-i18n="programs.elite.title">Elite Athlete Program</h3>
+                        <p data-i18n="programs.elite.description">Exclusive training for national and international level swimmers preparing for major competitions.</p>
+                        
+                        <div class="program-details">
+                            <div class="detail">
+                                <i class="fas fa-clock"></i>
+                                <span data-i18n="programs.elite.duration">Year-round</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-calendar"></i>
+                                <span data-i18n="programs.elite.frequency">6-8 sessions/week</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-users"></i>
+                                <span data-i18n="programs.elite.size">1-on-1 only</span>
+                            </div>
+                        </div>
+                        
+                        <ul class="program-features">
+                            <li data-i18n="programs.elite.feature1">Biomechanical analysis</li>
+                            <li data-i18n="programs.elite.feature2">Periodized training plans</li>
+                            <li data-i18n="programs.elite.feature3">Competition preparation</li>
+                            <li data-i18n="programs.elite.feature4">Recovery and injury prevention</li>
+                        </ul>
+                    </div>
+                    <div class="program-image">
+                        <img src="banner5.jpg" alt="Elite Program">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-i18n="testimonials.title">What Swimmers Say</h2>
+                <p class="section-subtitle" data-i18n="testimonials.subtitle">Success stories from athletes at every level</p>
+            </div>
+            
+            <div class="testimonials-slider">
+                <div class="testimonial-card glass-card active">
+                    <div class="testimonial-content">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p data-i18n="testimonials.sarah.text">"MeteoCoach transformed my swimming completely. In just 6 months, I dropped 8 seconds from my 100m freestyle and qualified for nationals. The technique improvements were incredible!"</p>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <h4 data-i18n="testimonials.sarah.name">Sarah Johnson</h4>
+                                <span data-i18n="testimonials.sarah.title">National Qualifier</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card glass-card">
+                    <div class="testimonial-content">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p data-i18n="testimonials.alex.text">"As an adult beginner, I was nervous about learning to swim. MeteoCoach made me feel comfortable and confident. Now I swim laps regularly and even joined a masters team!"</p>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <h4 data-i18n="testimonials.alex.name">Alex Rodriguez</h4>
+                                <span data-i18n="testimonials.alex.title">Adult Beginner Success</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card glass-card">
+                    <div class="testimonial-content">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p data-i18n="testimonials.maria.text">"The online coaching program was perfect for my busy schedule. Detailed video analysis and personalized training plans helped me achieve my goals from anywhere in the world."</p>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <h4 data-i18n="testimonials.maria.name">Maria Petrov</h4>
+                                <span data-i18n="testimonials.maria.title">Online Coaching Client</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-nav">
+                <button class="nav-dot active" data-slide="0"></button>
+                <button class="nav-dot" data-slide="1"></button>
+                <button class="nav-dot" data-slide="2"></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-i18n="contact.title">Get Started Today</h2>
+                <p class="section-subtitle" data-i18n="contact.subtitle">Ready to take your swimming to the next level?</p>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-info glass-card">
+                    <h3 data-i18n="contact.info.title">Let's Connect</h3>
+                    <p data-i18n="contact.info.description">Ready to start your swimming journey? Get in touch to schedule your first session or ask any questions.</p>
+                    
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4 data-i18n="contact.phone.title">Phone</h4>
+                                <p>+90 555 123 4567</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4 data-i18n="contact.email.title">Email</h4>
+                                <p>info@metecoach.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4 data-i18n="contact.location.title">Location</h4>
+                                <p data-i18n="contact.location.address">Istanbul, Turkey</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h4 data-i18n="contact.hours.title">Training Hours</h4>
+                                <p data-i18n="contact.hours.time">Mon-Sat: 6AM - 10PM</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                
+                <form class="contact-form glass-card" id="contact-form">
+                    <h3 data-i18n="contact.form.title">Book Your First Session</h3>
+                    
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" required>
+                        <label for="name" data-i18n="contact.form.name">Full Name</label>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" required>
+                        <label for="email" data-i18n="contact.form.email">Email Address</label>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="tel" id="phone" name="phone" required>
+                        <label for="phone" data-i18n="contact.form.phone">Phone Number</label>
+                    </div>
+                    
+                    <div class="form-group">
+                        <select id="service" name="service" required>
+                            <option value="" data-i18n="contact.form.service.placeholder">Select a Service</option>
+                            <option value="private" data-i18n="contact.form.service.private">Private Coaching</option>
+                            <option value="group" data-i18n="contact.form.service.group">Group Sessions</option>
+                            <option value="competitive" data-i18n="contact.form.service.competitive">Competitive Training</option>
+                            <option value="online" data-i18n="contact.form.service.online">Online Coaching</option>
+                        </select>
+                        <label for="service" data-i18n="contact.form.service.label">Service Type</label>
+                    </div>
+                    
+                    <div class="form-group">
+                        <select id="level" name="level" required>
+                            <option value="" data-i18n="contact.form.level.placeholder">Select Your Level</option>
+                            <option value="beginner" data-i18n="contact.form.level.beginner">Beginner</option>
+                            <option value="intermediate" data-i18n="contact.form.level.intermediate">Intermediate</option>
+                            <option value="advanced" data-i18n="contact.form.level.advanced">Advanced</option>
+                            <option value="elite" data-i18n="contact.form.level.elite">Elite</option>
+                        </select>
+                        <label for="level" data-i18n="contact.form.level.label">Swimming Level</label>
+                    </div>
+                    
+                    <div class="form-group">
+                        <textarea id="message" name="message" rows="4"></textarea>
+                        <label for="message" data-i18n="contact.form.message">Additional Information</label>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary" data-i18n="contact.form.submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <!-- Company Info -->
-                <div class="footer-info animate-on-scroll fade-in-up">
-                    <div class="footer-logo">
-                        <i class="fas fa-swimming-pool"></i>
-                        <span>Mete Coach</span>
+                <div class="footer-brand">
+                    <h3>MeteoCoach</h3>
+                    <p data-i18n="footer.description">Transforming swimmers through expert coaching and personalized training programs.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4 data-i18n="footer.services.title">Services</h4>
+                        <ul>
+                            <li><a href="#" data-i18n="footer.services.private">Private Coaching</a></li>
+                            <li><a href="#" data-i18n="footer.services.group">Group Sessions</a></li>
+                            <li><a href="#" data-i18n="footer.services.competitive">Competitive Training</a></li>
+                            <li><a href="#" data-i18n="footer.services.online">Online Coaching</a></li>
+                        </ul>
                     </div>
-                    <p>Profesyonel yüzme eğitimi ve su sporları akademisi</p>
-                </div>
-    
-                <!-- Quick Links -->
-                <div class="footer-links animate-on-scroll fade-in-up delay-200">
-                    <h3>Hızlı Erişim</h3>
-                    <a href="#home">Ana Sayfa</a>
-                    <a href="#about">Hakkımızda</a>
-                    <a href="#services">Hizmetler</a>
-                    <a href="#gallery">Galeri</a>
-                    <a href="#contact">İletişim</a>
-                </div>
-    
-                <!-- Social Media -->
-                <div class="footer-social animate-on-scroll fade-in-up delay-300">
-                    <h3>Sosyal Medya</h3>
-                    <div class="social-links">
-                        <a href="https://www.instagram.com/swimming__performance_mette?igsh=MW8yMW5vb2xtenhtaw==" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    
+                    <div class="footer-section">
+                        <h4 data-i18n="footer.programs.title">Programs</h4>
+                        <ul>
+                            <li><a href="#" data-i18n="footer.programs.beginner">Beginner</a></li>
+                            <li><a href="#" data-i18n="footer.programs.intermediate">Intermediate</a></li>
+                            <li><a href="#" data-i18n="footer.programs.advanced">Advanced</a></li>
+                            <li><a href="#" data-i18n="footer.programs.elite">Elite</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h4 data-i18n="footer.contact.title">Contact</h4>
+                        <ul>
+                            <li>+90 555 123 4567</li>
+                            <li>info@metecoach.com</li>
+                            <li data-i18n="footer.contact.location">Istanbul, Turkey</li>
+                        </ul>
                     </div>
                 </div>
             </div>
-    
+            
             <div class="footer-bottom">
-                <p>© 2024 Mete Coach. Tüm hakları saklıdır.</p>
+                <p>&copy; 2024 MeteoCoach. <span data-i18n="footer.rights">All rights reserved.</span></p>
             </div>
         </div>
     </footer>
 
-    <div class="back-to-top">
-        <i class="fas fa-arrow-up"></i>
-    </div>
-
+    <!-- Scripts -->
     <script src="script.js"></script>
 </body>
 </html>

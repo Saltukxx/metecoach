@@ -1342,13 +1342,30 @@ function initializeVideo() {
     
     if (!video) return;
     
+    // Mobile device detection
+    function isMobileDevice() {
+        return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ||
+               window.innerWidth <= 768;
+    }
+    
     // Check if device supports video and has good connection
     const supportsVideo = checkVideoSupport();
     const hasGoodConnection = checkConnection();
     
+    console.log('Hero video - Mobile device:', isMobileDevice());
+    console.log('Hero video - Supports video:', supportsVideo);
+    console.log('Hero video - Good connection:', hasGoodConnection);
+    
     if (!supportsVideo || !hasGoodConnection) {
+        console.log('Hero video - Showing fallback background');
         showFallbackBackground();
         return;
+    }
+    
+    // Ensure video container is visible on mobile
+    if (isMobileDevice() && videoContainer) {
+        videoContainer.style.display = 'block';
+        console.log('Hero video - Video container set to visible on mobile');
     }
     
     // Video loading and error handling
@@ -1399,7 +1416,10 @@ function initializeVideo() {
                 if (video.paused) {
                     video.play().catch(e => {
                         console.log('Autoplay prevented:', e);
-                        showFallbackBackground();
+                        // Don't immediately show fallback on mobile - user might interact later
+                        if (!isMobileDevice()) {
+                            showFallbackBackground();
+                        }
                     });
                 }
             } else {
@@ -1418,7 +1438,7 @@ function initializeVideo() {
         // Basic video support check
         if (!video.canPlayType) return false;
         
-        // Check for reduced data preference
+        // Only disable video if user explicitly prefers reduced data
         if ('connection' in navigator && navigator.connection && navigator.connection.saveData) {
             return false;
         }
@@ -1427,15 +1447,13 @@ function initializeVideo() {
         return true;
     }
     
-    // Check connection quality
+    // Check connection quality - more permissive for mobile
     function checkConnection() {
-        if ('connection' in navigator) {
+        if ('connection' in navigator && navigator.connection) {
             const connection = navigator.connection;
             
-            // Don't load video on slow connections
-            if (connection.effectiveType === 'slow-2g' || 
-                connection.effectiveType === '2g' ||
-                connection.saveData) {
+            // Only disable on very slow connections or explicit save data preference
+            if (connection.effectiveType === 'slow-2g' && connection.saveData) {
                 return false;
             }
         }
@@ -1457,6 +1475,23 @@ function initializeVideo() {
     function hideLoadingState() {
         // Add any loading state removal logic here
         console.log('Video ready to play');
+    }
+    
+    // Mobile-specific video handling
+    if (isMobileDevice()) {
+        // Try to play video on first user interaction
+        const playVideoOnInteraction = () => {
+            if (video.paused) {
+                video.play().catch(e => {
+                    console.log('Mobile video play failed:', e);
+                });
+            }
+        };
+        
+        // Add event listeners for common mobile interactions
+        document.addEventListener('touchstart', playVideoOnInteraction, { once: true });
+        document.addEventListener('click', playVideoOnInteraction, { once: true });
+        document.addEventListener('scroll', playVideoOnInteraction, { once: true });
     }
     
     // Optimize video based on device performance
@@ -1493,6 +1528,37 @@ function initializeProgramsVideo() {
     const fallbackBackground = document.querySelector('.programs-background-fallback');
     
     if (!video) return;
+    
+    // Check video support (reuse from hero video)
+    function checkVideoSupport() {
+        if (!video.canPlayType) return false;
+        if ('connection' in navigator && navigator.connection && navigator.connection.saveData) {
+            return false;
+        }
+        return true;
+    }
+    
+    // Check connection quality - more permissive for mobile
+    function checkConnection() {
+        if ('connection' in navigator && navigator.connection) {
+            const connection = navigator.connection;
+            // Only disable on very slow connections with explicit save data preference
+            if (connection.effectiveType === 'slow-2g' && connection.saveData) {
+                return false;
+            }
+        }
+        return true;
+    }
+    
+    // Show fallback background
+    function showProgramsFallbackBackground() {
+        if (videoContainer) {
+            videoContainer.style.display = 'none';
+        }
+        if (fallbackBackground) {
+            fallbackBackground.style.display = 'block';
+        }
+    }
     
     // Check if device supports video and has good connection
     const supportsVideo = checkVideoSupport();
@@ -1565,38 +1631,6 @@ function initializeProgramsVideo() {
     
     videoObserver.observe(video);
     
-    // Check video support (reuse from hero video)
-    function checkVideoSupport() {
-        if (!video.canPlayType) return false;
-        if ('connection' in navigator && navigator.connection && navigator.connection.saveData) {
-            return false;
-        }
-        return true;
-    }
-    
-    // Check connection quality (reuse from hero video)
-    function checkConnection() {
-        if ('connection' in navigator) {
-            const connection = navigator.connection;
-            if (connection.effectiveType === 'slow-2g' || 
-                connection.effectiveType === '2g' ||
-                connection.saveData) {
-                return false;
-            }
-        }
-        return true;
-    }
-    
-    // Show fallback background
-    function showProgramsFallbackBackground() {
-        if (videoContainer) {
-            videoContainer.style.display = 'none';
-        }
-        if (fallbackBackground) {
-            fallbackBackground.style.display = 'block';
-        }
-    }
-    
     // Hide loading state
     function hideProgramsLoadingState() {
         console.log('Programs video ready to play');
@@ -1641,14 +1675,26 @@ function initializeJoinVideo() {
         // Basic video support check
         if (!video.canPlayType) return false;
         
-        // Check for reduced data preference
+        // Only disable video if user explicitly prefers reduced data
         if ('connection' in navigator && navigator.connection && navigator.connection.saveData) {
             return false;
         }
         
-        // Check if MP4 is supported
-        const canPlayMP4 = video.canPlayType('video/mp4; codecs="avc1.42E01E"');
-        return (canPlayMP4 === 'probably' || canPlayMP4 === 'maybe');
+        // Check if MP4 is supported - be more permissive
+        const canPlayMP4 = video.canPlayType('video/mp4');
+        return (canPlayMP4 === 'probably' || canPlayMP4 === 'maybe' || canPlayMP4 === '');
+    }
+    
+    // Check connection quality - more permissive for mobile
+    function checkConnection() {
+        if ('connection' in navigator && navigator.connection) {
+            const connection = navigator.connection;
+            // Only disable on very slow connections with explicit save data preference
+            if (connection.effectiveType === 'slow-2g' && connection.saveData) {
+                return false;
+            }
+        }
+        return true;
     }
     
     // Check if device supports video and has good connection

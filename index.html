@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-i18n="title">MeteoCoach - Professional Swimming Coach</title>
+    <title data-i18n="title">MeteCoach - Professional Swimming Coach</title>
     <meta name="description" content="Professional swimming coaching services with personalized training programs">
     <meta name="keywords" content="swimming, coach, training, lessons, competitive swimming">
     
@@ -23,7 +23,7 @@
     <nav class="navbar glass-nav">
         <div class="nav-container">
             <div class="nav-brand">
-                <h2>MeteoCoach</h2>
+                <h2>MeteCoach</h2>
             </div>
             
             <div class="nav-menu" id="nav-menu">
@@ -32,6 +32,7 @@
                 <a href="#services" class="nav-link" data-i18n="nav.services">Services</a>
                 <a href="#programs" class="nav-link" data-i18n="nav.programs">Programs</a>
                 <a href="#testimonials" class="nav-link" data-i18n="nav.testimonials">Testimonials</a>
+                <a href="#join" class="nav-link" data-i18n="nav.join">Join Us</a>
                 <a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a>
             </div>
             
@@ -66,7 +67,7 @@
                 poster="hero.jpg.jpg"
                 id="heroVideo"
             >
-                <source src="expor.mp4" type="video/mp4">
+                <source src="HERO.mp4" type="video/mp4">
                 <!-- Fallback for older browsers -->
                 Your browser does not support the video tag.
             </video>
@@ -111,7 +112,7 @@
     <section id="about" class="about">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title" data-i18n="about.title">About MeteoCoach</h2>
+                <h2 class="section-title" data-i18n="about.title">About MeteCoach</h2>
                 <p class="section-subtitle" data-i18n="about.subtitle">Your journey to swimming excellence starts here</p>
             </div>
             
@@ -146,7 +147,7 @@
                 </div>
                 
                 <div class="about-image glass-card">
-                    <img src="hero.jpg.jpg" alt="MeteoCoach" class="coach-image">
+                    <img src="hero.jpg.jpg" alt="MeteCoach" class="coach-image">
                     <div class="image-overlay">
                         <div class="play-button">
                             <i class="fas fa-play"></i>
@@ -444,7 +445,7 @@
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                         </div>
-                        <p data-i18n="testimonials.sarah.text">"MeteoCoach transformed my swimming completely. In just 6 months, I dropped 8 seconds from my 100m freestyle and qualified for nationals. The technique improvements were incredible!"</p>
+                        <p data-i18n="testimonials.sarah.text">"MeteCoach transformed my swimming completely. In just 6 months, I dropped 8 seconds from my 100m freestyle and qualified for nationals. The technique improvements were incredible!"</p>
                         <div class="testimonial-author">
                             <div class="author-info">
                                 <h4 data-i18n="testimonials.sarah.name">Sarah Johnson</h4>
@@ -463,7 +464,7 @@
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                         </div>
-                        <p data-i18n="testimonials.alex.text">"As an adult beginner, I was nervous about learning to swim. MeteoCoach made me feel comfortable and confident. Now I swim laps regularly and even joined a masters team!"</p>
+                        <p data-i18n="testimonials.alex.text">"As an adult beginner, I was nervous about learning to swim. MeteCoach made me feel comfortable and confident. Now I swim laps regularly and even joined a masters team!"</p>
                         <div class="testimonial-author">
                             <div class="author-info">
                                 <h4 data-i18n="testimonials.alex.name">Alex Rodriguez</h4>
@@ -497,6 +498,84 @@
                 <button class="nav-dot active" data-slide="0"></button>
                 <button class="nav-dot" data-slide="1"></button>
                 <button class="nav-dot" data-slide="2"></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Join Us Section -->
+    <section id="join" class="join-us">
+        <!-- Cinematic Video Background for Join Us -->
+        <div class="join-video-container">
+            <video 
+                class="join-video" 
+                autoplay 
+                muted 
+                loop 
+                playsinline
+                preload="metadata"
+                poster="newsection.jpg"
+                id="joinVideo"
+            >
+                <source src="newsection.mp4" type="video/mp4">
+                <!-- Fallback for older browsers -->
+                Your browser does not support the video tag.
+            </video>
+            
+            <!-- Video overlay gradients -->
+            <div class="join-video-overlay-gradient"></div>
+            <div class="join-video-overlay-pattern"></div>
+            
+            <!-- Video controls -->
+            <div class="join-video-controls">
+                <button class="join-video-toggle" id="joinVideoToggle" aria-label="Toggle video playback">
+                    <i class="fas fa-pause"></i>
+                </button>
+                <div class="join-video-sound-toggle" id="joinSoundToggle" aria-label="Toggle sound">
+                    <i class="fas fa-volume-mute"></i>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Fallback background for mobile/slow connections -->
+        <div class="join-background-fallback">
+            <div class="join-wave-animation"></div>
+        </div>
+        
+        <div class="container">
+            <div class="join-content">
+                <div class="join-text glass-card">
+                    <h2 class="join-title" data-i18n="join.title">Join Our Swimming Community</h2>
+                    <p class="join-subtitle" data-i18n="join.subtitle">Become part of a passionate community dedicated to swimming excellence and personal growth</p>
+                    
+                    <div class="join-features">
+                        <div class="join-feature">
+                            <i class="fas fa-swimming-pool"></i>
+                            <div>
+                                <h4 data-i18n="join.features.training.title">Expert Training</h4>
+                                <p data-i18n="join.features.training.desc">World-class coaching techniques</p>
+                            </div>
+                        </div>
+                        <div class="join-feature">
+                            <i class="fas fa-users"></i>
+                            <div>
+                                <h4 data-i18n="join.features.community.title">Supportive Community</h4>
+                                <p data-i18n="join.features.community.desc">Connect with fellow swimmers</p>
+                            </div>
+                        </div>
+                        <div class="join-feature">
+                            <i class="fas fa-trophy"></i>
+                            <div>
+                                <h4 data-i18n="join.features.success.title">Proven Results</h4>
+                                <p data-i18n="join.features.success.desc">Achieve your swimming goals</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="join-buttons">
+                        <button class="btn btn-primary" data-i18n="join.cta.start">Start Your Journey</button>
+                        <button class="btn btn-secondary" data-i18n="join.cta.learn">Learn More</button>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -612,7 +691,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <h3>MeteoCoach</h3>
+                    <h3>MeteCoach</h3>
                     <p data-i18n="footer.description">Transforming swimmers through expert coaching and personalized training programs.</p>
                 </div>
                 
@@ -649,7 +728,7 @@
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2024 MeteoCoach. <span data-i18n="footer.rights">All rights reserved.</span></p>
+                <p>&copy; 2024 MeteCoach. <span data-i18n="footer.rights">All rights reserved.</span></p>
             </div>
         </div>
     </footer>

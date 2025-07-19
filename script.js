@@ -1,7 +1,7 @@
 // Multi-language support with translations
 const translations = {
     en: {
-        title: "MeteoCoach - Professional Swimming Coach",
+        title: "MeteCoach - Professional Swimming Coach",
         nav: {
             home: "Home",
             about: "About",
@@ -24,7 +24,7 @@ const translations = {
             }
         },
         about: {
-            title: "About MeteoCoach",
+            title: "About MeteCoach",
             subtitle: "Your journey to swimming excellence starts here",
             passion: {
                 title: "Passion Meets Expertise",
@@ -138,12 +138,12 @@ const translations = {
             sarah: {
                 name: "Sarah Johnson",
                 title: "National Qualifier",
-                text: "MeteoCoach transformed my swimming completely. In just 6 months, I dropped 8 seconds from my 100m freestyle and qualified for nationals. The technique improvements were incredible!"
+                text: "MeteCoach transformed my swimming completely. In just 6 months, I dropped 8 seconds from my 100m freestyle and qualified for nationals. The technique improvements were incredible!"
             },
             alex: {
                 name: "Alex Rodriguez",
                 title: "Adult Beginner Success",
-                text: "As an adult beginner, I was nervous about learning to swim. MeteoCoach made me feel comfortable and confident. Now I swim laps regularly and even joined a masters team!"
+                text: "As an adult beginner, I was nervous about learning to swim. MeteCoach made me feel comfortable and confident. Now I swim laps regularly and even joined a masters team!"
             },
             maria: {
                 name: "Maria Petrov",
@@ -221,7 +221,7 @@ const translations = {
         }
     },
     tr: {
-        title: "MeteoCoach - Profesyonel Yüzme Antrenörü",
+        title: "MeteCoach - Profesyonel Yüzme Antrenörü",
         nav: {
             home: "Ana Sayfa",
             about: "Hakkında",
@@ -244,7 +244,7 @@ const translations = {
             }
         },
         about: {
-            title: "MeteoCoach Hakkında",
+            title: "MeteCoach Hakkında",
             subtitle: "Yüzme mükemmelliğine yolculuğunuz burada başlıyor",
             passion: {
                 title: "Tutku Uzmanlıkla Buluşuyor",
@@ -358,12 +358,12 @@ const translations = {
             sarah: {
                 name: "Sarah Johnson",
                 title: "Milli Takım Elemesi",
-                text: "MeteoCoach yüzmeimi tamamen dönüştürdü. Sadece 6 ayda 100m serbest stilimden 8 saniye düşürdüm ve milli takım elemelerine katıldım. Teknik gelişmeler inanılmazdı!"
+                text: "MeteCoach yüzmeimi tamamen dönüştürdü. Sadece 6 ayda 100m serbest stilimden 8 saniye düşürdüm ve milli takım elemelerine katıldım. Teknik gelişmeler inanılmazdı!"
             },
             alex: {
                 name: "Alex Rodriguez",
                 title: "Yetişkin Başlangıç Başarısı",
-                text: "Yetişkin bir başlangıç olarak yüzme öğrenme konusunda gerginydim. MeteoCoach beni rahat ve kendine güvenli hissettirdi. Şimdi düzenli olarak kucak yüzüyorum ve hatta bir usta takımına katıldım!"
+                text: "Yetişkin bir başlangıç olarak yüzme öğrenme konusunda gerginydim. MeteCoach beni rahat ve kendine güvenli hissettirdi. Şimdi düzenli olarak kucak yüzüyorum ve hatta bir usta takımına katıldım!"
             },
             maria: {
                 name: "Maria Petrov",
@@ -441,7 +441,7 @@ const translations = {
         }
     },
     de: {
-        title: "MeteoCoach - Professioneller Schwimmtrainer",
+        title: "MeteCoach - Professioneller Schwimmtrainer",
         nav: {
             home: "Startseite",
             about: "Über uns",
@@ -464,7 +464,7 @@ const translations = {
             }
         },
         about: {
-            title: "Über MeteoCoach",
+            title: "Über MeteCoach",
             subtitle: "Ihre Reise zur Schwimmexzellenz beginnt hier",
             passion: {
                 title: "Leidenschaft trifft Expertise",
@@ -578,12 +578,12 @@ const translations = {
             sarah: {
                 name: "Sarah Johnson",
                 title: "Nationale Qualifikantin",
-                text: "MeteoCoach hat mein Schwimmen komplett transformiert. In nur 6 Monaten habe ich 8 Sekunden von meinem 100m Freistil abgenommen und mich für die Nationalen qualifiziert. Die Technikverbesserungen waren unglaublich!"
+                text: "MeteCoach hat mein Schwimmen komplett transformiert. In nur 6 Monaten habe ich 8 Sekunden von meinem 100m Freistil abgenommen und mich für die Nationalen qualifiziert. Die Technikverbesserungen waren unglaublich!"
             },
             alex: {
                 name: "Alex Rodriguez",
                 title: "Erwachsener Anfängererfolg",
-                text: "Als erwachsener Anfänger war ich nervös, schwimmen zu lernen. MeteoCoach ließ mich mich wohl und selbstbewusst fühlen. Jetzt schwimme ich regelmäßig Bahnen und bin sogar einem Mastersteam beigetreten!"
+                text: "Als erwachsener Anfänger war ich nervös, schwimmen zu lernen. MeteCoach ließ mich mich wohl und selbstbewusst fühlen. Jetzt schwimme ich regelmäßig Bahnen und bin sogar einem Mastersteam beigetreten!"
             },
             maria: {
                 name: "Maria Petrov",
@@ -661,7 +661,7 @@ const translations = {
         }
     },
     ru: {
-        title: "MeteoCoach - Профессиональный Тренер по Плаванию",
+        title: "MeteCoach - Профессиональный Тренер по Плаванию",
         nav: {
             home: "Главная",
             about: "О нас",
@@ -684,7 +684,7 @@ const translations = {
             }
         },
         about: {
-            title: "О MeteoCoach",
+            title: "О MeteCoach",
             subtitle: "Ваше путешествие к совершенству в плавании начинается здесь",
             passion: {
                 title: "Страсть Встречает Экспертизу",
@@ -798,12 +798,12 @@ const translations = {
             sarah: {
                 name: "Сара Джонсон",
                 title: "Квалификант Национального Уровня",
-                text: "MeteoCoach полностью преобразил мое плавание. Всего за 6 месяцев я сбросила 8 секунд с моего 100м вольным стилем и квалифицировалась на национальные соревнования. Улучшения техники были невероятными!"
+                text: "MeteCoach полностью преобразил мое плавание. Всего за 6 месяцев я сбросила 8 секунд с моего 100м вольным стилем и квалифицировалась на национальные соревнования. Улучшения техники были невероятными!"
             },
             alex: {
                 name: "Алекс Родригес",
                 title: "Успех Взрослого Новичка",
-                text: "Как взрослый новичок, я нервничал по поводу изучения плавания. MeteoCoach заставил меня чувствовать себя комфортно и уверенно. Теперь я регулярно плаваю дорожки и даже присоединился к команде мастеров!"
+                text: "Как взрослый новичок, я нервничал по поводу изучения плавания. MeteCoach заставил меня чувствовать себя комфортно и уверенно. Теперь я регулярно плаваю дорожки и даже присоединился к команде мастеров!"
             },
             maria: {
                 name: "Мария Петрова",
@@ -892,6 +892,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeHero();
     initializeVideo();
     initializeProgramsVideo();
+    initializeJoinVideo();
     initializePrograms();
     initializeTestimonials();
     initializeContact();
@@ -1622,6 +1623,112 @@ function initializeProgramsVideo() {
                 }
             }
         });
+    }
+}
+
+// Join Us Video Functions
+function initializeJoinVideo() {
+    const video = document.getElementById('joinVideo');
+    const videoToggle = document.getElementById('joinVideoToggle');
+    const soundToggle = document.getElementById('joinSoundToggle');
+    const videoContainer = document.querySelector('.join-video-container');
+    const fallbackBackground = document.querySelector('.join-background-fallback');
+    
+    if (!video) return;
+    
+    // Check if device supports video and has good connection
+    const supportsVideo = checkVideoSupport();
+    const hasGoodConnection = checkConnection();
+    
+    if (!supportsVideo || !hasGoodConnection) {
+        showJoinFallbackBackground();
+        return;
+    }
+    
+    // Show video container
+    if (videoContainer) {
+        videoContainer.style.display = 'block';
+    }
+    
+    // Hide fallback background
+    if (fallbackBackground) {
+        fallbackBackground.style.display = 'none';
+    }
+    
+    // Video event listeners
+    video.addEventListener('loadeddata', function() {
+        video.play().catch(e => {
+            console.error('Join video autoplay failed:', e);
+        });
+    });
+    
+    video.addEventListener('error', function(e) {
+        console.error('Join video error:', e);
+        showJoinFallbackBackground();
+    });
+    
+    // Play/Pause toggle
+    if (videoToggle) {
+        videoToggle.addEventListener('click', function() {
+            if (video.paused) {
+                video.play();
+                this.innerHTML = '<i class="fas fa-pause"></i>';
+            } else {
+                video.pause();
+                this.innerHTML = '<i class="fas fa-play"></i>';
+            }
+        });
+    }
+    
+    // Sound toggle (currently videos are muted by default)
+    if (soundToggle) {
+        soundToggle.addEventListener('click', function() {
+            if (video.muted) {
+                video.muted = false;
+                this.innerHTML = '<i class="fas fa-volume-up"></i>';
+            } else {
+                video.muted = true;
+                this.innerHTML = '<i class="fas fa-volume-mute"></i>';
+            }
+        });
+    }
+    
+    // Intersection Observer to pause video when not in view
+    if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    if (video.paused) {
+                        video.play().catch(e => console.error('Join video play failed:', e));
+                    }
+                } else {
+                    if (!video.paused) {
+                        video.pause();
+                    }
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        observer.observe(video);
+        
+        // Pause video when page is not visible
+        document.addEventListener('visibilitychange', function() {
+            if (document.hidden) {
+                if (!video.paused) {
+                    video.pause();
+                    videoToggle.innerHTML = '<i class="fas fa-play"></i>';
+                }
+            }
+        });
+    }
+    
+    function showJoinFallbackBackground() {
+        if (videoContainer) {
+            videoContainer.style.display = 'none';
+        }
+        if (fallbackBackground) {
+            fallbackBackground.style.display = 'block';
+        }
     }
 }
 

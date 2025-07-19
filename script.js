@@ -1636,6 +1636,21 @@ function initializeJoinVideo() {
     
     if (!video) return;
     
+    // Check video support
+    function checkVideoSupport() {
+        // Basic video support check
+        if (!video.canPlayType) return false;
+        
+        // Check for reduced data preference
+        if ('connection' in navigator && navigator.connection && navigator.connection.saveData) {
+            return false;
+        }
+        
+        // Check if MP4 is supported
+        const canPlayMP4 = video.canPlayType('video/mp4; codecs="avc1.42E01E"');
+        return (canPlayMP4 === 'probably' || canPlayMP4 === 'maybe');
+    }
+    
     // Check if device supports video and has good connection
     const supportsVideo = checkVideoSupport();
     const hasGoodConnection = checkConnection();
